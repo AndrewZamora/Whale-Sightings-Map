@@ -1,0 +1,18 @@
+#all-sightings {
+    border: purple dashed 2px;
+    margin-top: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#all-sightings h2{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.sighting-cards{
+    flex-basis: calc(50%-3em);
+    margin: 3em;
+}

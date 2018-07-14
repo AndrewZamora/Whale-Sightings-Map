@@ -1,0 +1,25 @@
+h3 {
+    text-align: center;
+}
+
+nav {
+    border: dashed orangered 2px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+    text-align: center;
+}
+
+ .nav-links a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
