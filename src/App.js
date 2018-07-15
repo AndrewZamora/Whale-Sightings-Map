@@ -30,33 +30,33 @@ class App extends Component {
 
 
   render() {
-    const center ={
-      lat:48.636669,
-      lng:-122.916611
+    // Google Maps API Key is needed for map
+    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+    // Coordinates to San Juan Island
+    const center = {
+      lat: 48.636669,
+      lng: -122.916611
     }
 
     return (
       <div className="app">
-        
         <main>
           <div className="animal-sightings">
-          <Navigation links={this.state.links} />
+            <Navigation links={this.state.links} />
             <AnimalSightings whaleData={this.state.whaleData} />
             <Footer />
           </div>
           <div className="map">
-          <GoogleMapReact 
-              bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-             center={center}
-             zoom={7}>
+            <GoogleMapReact
+              bootstrapURLKeys={{ key: apiKey }}
+              center={center}
+              zoom={7}>
             </GoogleMapReact>
           </div>
         </main>
-
-        
       </div>
-        );
-      }
-    }
-    
-    export default App;
+    );
+  }
+}
+
+export default App;
