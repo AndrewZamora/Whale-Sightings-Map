@@ -23,3 +23,6 @@ yarn-error.log*
 
 # Something to do with VS code
 /.vs
+
+# api keys
+.env      
