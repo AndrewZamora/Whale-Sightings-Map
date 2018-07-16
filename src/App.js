@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://hotline.whalemuseum.org/api.json')
+    fetch('api.json')
       .then(response => response.json())
       .then((data) => {
         this.setState({

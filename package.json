@@ -2,6 +2,7 @@
   "name": "whale_sightings_map",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://hotline.whalemuseum.org/",
   "dependencies": {
     "google-map-react": "^1.0.5",
     "react": "^16.4.1",
