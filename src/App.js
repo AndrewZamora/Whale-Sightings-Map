@@ -37,23 +37,27 @@ class App extends Component {
       lat: 48.636669,
       lng: -122.916611
     }
+    const loadingStyle = {"margin":"40vh auto","color":"#333"}
 
     return (
       <div className="app">
-        <main>
-          <div className="animal-sightings">
-            <Navigation links={this.state.links} />
-            <AnimalSightings whaleData={this.state.whaleData} />
-            <Footer />
-          </div>
-          <div className="map">
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: apiKey }}
-              center={center}
-              zoom={7}>
-            </GoogleMapReact>
-          </div>
-        </main>
+        {this.state.whaleData.length  ? (
+          <main>
+            <div className="animal-sightings">
+              <Navigation links={this.state.links} />
+              <AnimalSightings whaleData={this.state.whaleData} />
+              <Footer />
+            </div>
+            <div className="map">
+              <GoogleMapReact
+                bootstrapURLKeys=
+                {{ key: apiKey }}
+                center={center}
+                zoom={7}>
+              </GoogleMapReact>
+            </div>
+          </main>
+        ) : (<div style={{"display":"flex"}}><h1 style={loadingStyle}>Loading...</h1></div>)}
       </div>
     );
   }
