@@ -1,8 +1,8 @@
-.animal-sightings{
+.map-navigation{
     display: flex;
-    flex-basis: 60%;
+    flex-basis: 25%;
     flex-direction: column;
-    background: greenyellow;
+    height: 100vh;
 }
 
 main {

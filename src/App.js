@@ -11,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       links: ['Home', 'About'],
+      species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea Lion", "steller sea lion", "sea otter", "other","unknown"],
       whaleData: []
     };
   }
@@ -43,11 +44,11 @@ class App extends Component {
       <div className="app">
         {this.state.whaleData.length  ? (
           <main>
-            <div className="animal-sightings">
-              <Navigation links={this.state.links} />
-              <AnimalSightings whaleData={this.state.whaleData} />
+            <div className="map-navigation">
+            <Navigation links={this.state.species} />
               <Footer />
             </div>
+          
             <div className="map">
               <GoogleMapReact
                 bootstrapURLKeys=

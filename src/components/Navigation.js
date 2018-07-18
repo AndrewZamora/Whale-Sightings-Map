@@ -5,11 +5,11 @@ class Navigation extends Component {
     render() {
         const links = this.props.links;
         const navBarLinks = links.map((link) =>
-       <li key={link}><a href={"/" + link}>{link}</a></li>
-    );  
+            <li key={link}><a href={"/" + link}>{link}</a></li>
+        );
+        const NavStyle = {"fontSize":"1.3em"};
         return (
-            <nav>
-                <h3>Whale Sighting Map</h3>
+            <nav style={NavStyle}>
                 <ul className="nav-links">
                     {navBarLinks}
                 </ul>
