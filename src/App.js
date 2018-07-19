@@ -12,23 +12,23 @@ class App extends Component {
     this.state = {
       links: ['Home', 'About'],
       species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea Lion", "steller sea lion", "sea otter", "other","unknown"],
-      whaleData: []
+      whaleData: [0],
+      speciesData:[]
     };
   }
 
   componentDidMount() {
-    fetch('api.json')
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          whaleData: data
-        })
+    fetch('api.json?species=orca')
+    .then(response => response.json())
+    .then((data) => {
+      this.setState({
+        speciesData: data
       })
-      .catch((error) => {
-        console.error(error);
-      })
+    })
+    .catch((error) => {
+      console.error(error);
+    })
   }
-
 
   render() {
     // Google Maps API Key is needed for map
@@ -37,8 +37,10 @@ class App extends Component {
     const center = {
       lat: 48.636669,
       lng: -122.916611
-    }
-    const loadingStyle = {"margin":"40vh auto","color":"#333"}
+    };
+    const loadingStyle = {"margin":"40vh auto","color":"#333"};
+
+    
 
     return (
       <div className="app">
@@ -48,7 +50,6 @@ class App extends Component {
             <Navigation links={this.state.species} />
               <Footer />
             </div>
-          
             <div className="map">
               <GoogleMapReact
                 bootstrapURLKeys=
