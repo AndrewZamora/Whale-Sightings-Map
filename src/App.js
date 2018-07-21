@@ -18,6 +18,11 @@ class App extends Component {
   }
 
   componentDidMount() {
+    
+   
+  }
+  
+  getSpeciesData =()=>{
     fetch('api.json?species=orca')
     .then(response => response.json())
     .then((data) => {
@@ -28,8 +33,10 @@ class App extends Component {
     .catch((error) => {
       console.error(error);
     })
+    console.log(this.state.speciesData);
   }
-
+  
+  
   render() {
     // Google Maps API Key is needed for map
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -41,12 +48,17 @@ class App extends Component {
     const loadingStyle = {"margin":"40vh auto","color":"#333"};
 
     
+    
+  
+
+    
 
     return (
       <div className="app">
         {this.state.whaleData.length  ? (
           <main>
             <div className="map-navigation">
+              <h1 onClick={this.getSpeciesData.bind(this)}>Title</h1>
             <Navigation links={this.state.species} />
               <Footer />
             </div>
