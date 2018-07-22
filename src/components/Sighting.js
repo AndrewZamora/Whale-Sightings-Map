@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import './Sighting.css';
+import Marker from './Marker';
 
 class Sighting extends Component {
     render() {
-        const sight = this.props.sight.id;
-        const animal = this.props.sight.species;
-        const location = "Latitude: " + this.props.sight.latitude + " Longitude: " + this.props.sight.longitude;
-        const description = this.props.sight.description;
+        const AllSightings = this.props.speciesData.map((sight, index) => {
+            return <React.Fragment><Marker lat={sight.latitude}lng={sight.longitude}text={sight.species}/></React.Fragment>
+        })
         return (
-            <div className="sighting-cards">
-                <h3 key={sight}>{animal}</h3>
-                <p><strong>Location:</strong> {location}</p>
-                <p><strong>Description: </strong> {description}</p>
-            </div>
+            <React.Fragment>
+                {AllSightings}
+            </React.Fragment>
         );
     }
 
