@@ -5,7 +5,7 @@ class Footer extends Component {
     render(){
         return(
             <footer>
-                <p>Code by Andrew M Zamora and data provided by  <a href="https://whalemuseum.org/">The Whale Museum</a></p>
+                <p>Data provided by  <a href="https://whalemuseum.org/">The Whale Museum</a> and code by Andrew Zamora</p>
             </footer>
         );
     }

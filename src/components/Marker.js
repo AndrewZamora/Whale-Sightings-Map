@@ -5,7 +5,7 @@ class Marker extends Component {
     render(){
         const {lng,lat,text,key} = this.props;
         const style = {"width":"1em",
-        "height":"1em","background":"red","border-radius":"50%"};
+        "height":"1em","background":"red","borderRadius":"50%"};
 
         return(
            <div style={style} lng={lng} lat={lat} text={text}

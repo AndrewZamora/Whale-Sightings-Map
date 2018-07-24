@@ -3,7 +3,6 @@ import GoogleMapReact from 'google-map-react';
 import './App.css';
 import './components/Navigation';
 import Navigation from './components/Navigation';
-import Sighting from './components/Sighting';
 import Footer from './components/Footer';
 import Marker from './components/Marker';
 
@@ -45,13 +44,10 @@ class App extends Component {
       lat: 48.636669,
       lng: -122.916611
     };
-    const loadingStyle = { "margin": "40vh auto", "color": "#333" };
-
+    
     const AllSightings = this.state.speciesData.map((sight) => {
       return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
     })
-
-    
 
     return (
       <div className="app">
@@ -71,6 +67,7 @@ class App extends Component {
                 zoom={7}>
                 {this.state.speciesData.length &&
                   AllSightings}
+                  
               </GoogleMapReact>
             </div>
 
