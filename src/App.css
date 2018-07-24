@@ -10,7 +10,7 @@ main {
 }
 
 .map{
-    background: cyan;
+    background: #ccc;
     height: 100vh;
     top:0;
     position: sticky;
