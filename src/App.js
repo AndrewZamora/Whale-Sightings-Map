@@ -10,7 +10,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      links: ['Home', 'About'],
       species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea Lion", "steller sea lion", "sea otter", "other", "unknown"],
       whaleData: [],
       speciesData: []
