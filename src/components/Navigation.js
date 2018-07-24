@@ -3,11 +3,11 @@ import './Navigation.css'
 
 class Navigation extends Component {
     render() {
-        const links = this.props.links;
+        const {links, onClick} = this.props;
         const navBarLinks = links.map((link) =>
-            <li key={link}><a href={"/" + link}>{link}</a></li>
+            <li key={link}><a onClick={() => onClick(link)}>{link}</a></li>
         );
-        const NavStyle = {"fontSize":"1.3em"};
+        const NavStyle = {"fontSize":"0.9em"};
         return (
             <nav style={NavStyle}>
                 <ul className="nav-links">

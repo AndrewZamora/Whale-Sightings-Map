@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       links: ['Home', 'About'],
       species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea Lion", "steller sea lion", "sea otter", "other", "unknown"],
-      whaleData: [0],
+      whaleData: [],
       speciesData: []
     };
   }
@@ -23,8 +23,8 @@ class App extends Component {
 
   }
 
-  getSpeciesData = () => {
-    fetch('api.json?species=orca')
+  getSpeciesData = animal => {
+    fetch('api.json?species=' + animal)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -34,10 +34,8 @@ class App extends Component {
       })
       .catch((error) => {
         console.error(error);
-      })
-      ;
+      });
   }
-
 
   render() {
     // Google Maps API Key is needed for map
@@ -49,23 +47,22 @@ class App extends Component {
     };
     const loadingStyle = { "margin": "40vh auto", "color": "#333" };
 
-    const AllSightings = this.state.speciesData.map((sight, index) => {
-      return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} />
+    const AllSightings = this.state.speciesData.map((sight) => {
+      return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
     })
+
+    
 
     return (
       <div className="app">
           <main>
+
             <div className="map-navigation">
-              <h1 onClick={this.getSpeciesData.bind(this)}>Title</h1>
-              {this.state.speciesData.length > 0 &&
-                <div>
-                  {this.state.speciesData[0].species}
-                </div>
-              }
-              <Navigation links={this.state.species} />
+              <h1>Whale Sightings Map</h1>
+              <Navigation links={this.state.species} onClick={this.getSpeciesData}/>
               <Footer />
             </div>
+
             <div className="map">
               <GoogleMapReact
                 bootstrapURLKeys=
@@ -76,6 +73,7 @@ class App extends Component {
                   AllSightings}
               </GoogleMapReact>
             </div>
+
           </main>
       </div>
     );

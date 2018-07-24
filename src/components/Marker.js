@@ -8,7 +8,8 @@ class Marker extends Component {
         "height":"1em","background":"red","border-radius":"50%"};
 
         return(
-           <div style={style} >
+           <div style={style} lng={lng} lat={lat} text={text}
+           key={key}>
            </div>
         );
     }
