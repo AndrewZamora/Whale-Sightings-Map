@@ -43,34 +43,33 @@ class App extends Component {
       lat: 48.636669,
       lng: -122.916611
     };
-    
+
     const AllSightings = this.state.speciesData.map((sight) => {
       return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
     })
 
     return (
       <div className="app">
-          <main>
+        <main>
 
-            <div className="map-navigation">
-              <h1 style={{"marginLeft": "0.3em"}}>Whale Sightings Map</h1>
-              <Navigation links={this.state.species} onClick={this.getSpeciesData}/>
-              <Footer />
-            </div>
+          <div className="map-navigation">
+            <h1 style={{ "marginLeft": "0.3em" }}>Whale Sightings Map</h1>
+            <Navigation links={this.state.species} onClick={this.getSpeciesData} />
+            <Footer />
+          </div>
 
-            <div className="map">
-              <GoogleMapReact
-                bootstrapURLKeys=
-                {{ key: apiKey }}
-                center={center}
-                zoom={7}>
-                {this.state.speciesData.length &&
-                  AllSightings}
-                  
-              </GoogleMapReact>
-            </div>
+          <div className="map">
+            <GoogleMapReact
+              bootstrapURLKeys=
+              {{ key: apiKey }}
+              center={center}
+              zoom={7}>
+              {this.state.speciesData.length &&
+                AllSightings}
+            </GoogleMapReact>
+          </div>
 
-          </main>
+        </main>
       </div>
     );
   }
