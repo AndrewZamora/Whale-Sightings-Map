@@ -1,10 +1,5 @@
 import React from 'react';
 import './Footer.css';
-
-
-// const HelloWorld = ({name}) => (
-//     <div>{`Hi ${name}`}</div>
-//    );
    
 const footerStyle = {
     "display":"flex",
