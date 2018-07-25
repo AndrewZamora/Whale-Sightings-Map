@@ -28,7 +28,6 @@ class App extends Component {
         this.setState({
           speciesData: data
         })
-        console.log(this.state.speciesData)
       })
       .catch((error) => {
         console.error(error);
