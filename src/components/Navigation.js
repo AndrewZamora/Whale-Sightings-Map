@@ -7,9 +7,9 @@ class Navigation extends Component {
         const navBarLinks = links.map((link) =>
             <li key={link}><a onClick={() => onClick(link)}>{link}</a></li>
         );
-        const NavStyle = {"fontSize":"0.9em",
+        const NavStyle = {"fontSize":"1.1em",
         "backgroundColor": "#333",
-        "color": "#fff"};
+        "color": "#fff", "textTransform":"capitalize"};
         return (
             <nav style={NavStyle}>
                 <ul className="nav-links">
