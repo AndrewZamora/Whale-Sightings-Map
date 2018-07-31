@@ -3,13 +3,20 @@
     margin: 0.4em 0 ;
     text-align: left;
     padding-left: 0.4em;
+    width: 100%;
 }
 
 .nav-links a {
     text-decoration: none;
     cursor: pointer;
+    width: 100%;
 }
-
-.nav-links a:hover {
+.nav-links li {
+    transition-duration: 0.2s;
+    padding: 0.1em;
+}
+.nav-links li:hover{
     color:#50C878;
+    background:#fff;
+    font-weight: bold;
 }

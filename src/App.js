@@ -52,7 +52,7 @@ class App extends Component {
         <main>
 
           <div className="map-navigation">
-            <h1 style={{ "marginLeft": "0.3em" }}>Whale Sightings Map</h1>
+            <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
             <Navigation links={this.state.species} onClick={this.getSpeciesData} />
             <Footer />
           </div>
