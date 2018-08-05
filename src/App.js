@@ -58,13 +58,13 @@ class App extends Component {
           </div>
 
           <div className="map">
+            <h1 style={{"zIndex":"1","textAlign":"center","margin-top":"40vh"}}>Loading...</h1>
             <GoogleMapReact
               bootstrapURLKeys=
               {{ key: apiKey }}
               center={center}
-              zoom={7}>
-              {this.state.speciesData.length &&
-                AllSightings}
+              zoom={7} style={{"zIndex":"-1"}}>
+              {AllSightings}
             </GoogleMapReact>
           </div>
 
