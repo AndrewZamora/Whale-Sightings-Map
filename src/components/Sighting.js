@@ -4,8 +4,8 @@ import Marker from './Marker';
 
 class Sighting extends Component {
     render() {
-        const AllSightings = this.props.speciesData.map((sight) => {
-            return <Marker lat={sight.latitude}lng={sight.longitude}text={sight.species}/>
+        const AllSightings = this.props.speciesData.map(({sight}) => {
+            return <Marker lat={latitude}lng={longitude}text={species}/>
         })
         return (
             <React.Fragment>
