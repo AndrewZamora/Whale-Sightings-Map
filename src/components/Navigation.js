@@ -3,18 +3,28 @@ import './Navigation.css'
 
 class Navigation extends Component {
     render() {
-        const {links, onClick} = this.props;
-        const navBarLinks = links.map((link) =>
-            <li key={link}><a onClick={() => onClick(link)}>{link}</a></li>
+        const { btnNames, onClick } = this.props;
+        const NavStyle = {
+           
+        };
+        const btnStyle = {
+            "display": "block",
+            "width": "100%",
+            "textTransform": "capitalize",
+            "fontSize": "1.1em",
+            "backgroundColor": "#333",
+            "color": "#fff", 
+            "border": "none",
+            "outline": "none",
+            "textAlign":"left",
+            "cursor":"pointer"
+        }
+        const navBarBtn = btnNames.map((name) =>
+            <button style={btnStyle} key={name}><a onClick={() => onClick(name)}>{name}</a></button>
         );
-        const NavStyle = {"fontSize":"1.1em",
-        "backgroundColor": "#333",
-        "color": "#fff", "textTransform":"capitalize"};
         return (
             <nav style={NavStyle}>
-                <ul className="nav-links">
-                    {navBarLinks}
-                </ul>
+                {navBarBtn}
             </nav>
         );
     }
