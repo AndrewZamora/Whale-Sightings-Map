@@ -10,16 +10,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: ["whales", "dolphin","porpoise", "sea lion","seal", "other"],
-      species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea lion", "steller sea lion", "sea otter", "other", "unknown"],
+      category: ["whales", "dolphin", "porpoise", "sea lion", "seal", "other"],
+      whales: ["orca", "minke", "gray whale", "humpback"],
+      dolphin: ["atlantic white-sided dolphin", "pacific white-sided dolphin"],
+      porpoise: ["dalls porpoise", "harbor porpoise"],
+      seal: ["harbor seal", "northern elephant seal", "southern elephant seal"],
+      "sea lion": ["california sea lion", "steller sea lion"], other: ["sea otter", "other", "unknown"],
       whaleData: [],
       speciesData: []
     };
   }
 
   componentDidMount() {
-
-
   }
 
   getSpeciesData = animal => {
@@ -59,12 +61,12 @@ class App extends Component {
           </div>
 
           <div className="map">
-            <h1 style={{"zIndex":"1","textAlign":"center","margin-top":"40vh"}}>Loading...</h1>
+            <h1 style={{ "zIndex": "1", "textAlign": "center", "marginTop": "40vh" }}>Loading...</h1>
             <GoogleMapReact
               bootstrapURLKeys=
               {{ key: apiKey }}
               center={center}
-              zoom={7} style={{"zIndex":"-1"}}>
+              zoom={7} style={{ "zIndex": "-1" }}>
               {AllSightings}
             </GoogleMapReact>
           </div>
