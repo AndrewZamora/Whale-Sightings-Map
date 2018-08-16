@@ -2,8 +2,7 @@ import React from 'react';
 import './Footer.css';
 
 const footerStyle = {
-    "display": "flex",
-    "height": "100%"
+    "display": "flex"
 };
 const pStyle = { "margin": "auto 0 0.3em 0.3em" }
 const aStyle = { "textDecoration": "none", "fontWeight": "bold", "color": "#50C878" };

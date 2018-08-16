@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea Lion", "steller sea lion", "sea otter", "other", "unknown"],
+      category: ["whales", "dolphin","porpoise", "sea lion","seal", "other"],
+      species: ["orca", "minke", "gray whale", "humpback", "atlantic white-sided dolphin", "pacific white-sided dolphin", "dalls porpoise", "harbor porpoise", "harbor seal", "northern elephant seal", "southern elephant seal", "california sea lion", "steller sea lion", "sea otter", "other", "unknown"],
       whaleData: [],
       speciesData: []
     };
@@ -53,7 +54,7 @@ class App extends Component {
 
           <div className="map-navigation">
             <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
-            <Navigation links={this.state.species} onClick={this.getSpeciesData} />
+            <Navigation links={this.state.category} onClick={this.getSpeciesData} />
             <Footer />
           </div>
 

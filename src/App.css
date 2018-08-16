@@ -4,6 +4,9 @@
     flex-direction: column;
     height: 100vh;
 }
+.map-navigation nav{
+    margin: auto 0;
+}
 
 main {
     display: flex;
