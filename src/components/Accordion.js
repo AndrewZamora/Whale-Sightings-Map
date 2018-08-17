@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Accordion.css';
 
 
 
@@ -9,7 +10,7 @@ class Accordion extends Component {
             "listStyle": "none",
             "margin": "0.2em 0 0.2em 0.3em",
             "padding": "0",
-            "text-transform":"capitalize"
+            "textTransform":"capitalize"
         };
         const allLinks = this.props.links[this.props.num].map(link => {
             return <li key={link}><a>{link}</a></li>
