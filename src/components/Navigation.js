@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Navigation.css'
+import './Navigation.css';
+import Accordion from './Accordion';
 
 class Navigation extends Component {
     render() {
@@ -19,8 +20,8 @@ class Navigation extends Component {
             "textAlign":"left",
             "cursor":"pointer"
         }
-        const navBarBtn = btnNames.map((name) =>
-            <button style={btnStyle} key={name}><a onClick={() => onClick(name)}>{name}</a></button>
+        const navBarBtn = btnNames.map((name,i) =>
+            <div key={name}><button style={btnStyle} ><a onClick={() => onClick(name)}>{name}</a></button><Accordion num={i} links={this.props.animalLinks}/></div>
         );
         return (
             <nav style={NavStyle}>
