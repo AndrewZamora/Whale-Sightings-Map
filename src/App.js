@@ -17,7 +17,8 @@ class App extends Component {
         ["harbor seal", "northern elephant seal", "southern elephant seal"],
         ["california sea lion", "steller sea lion"], ["sea otter", "other", "unknown"]],
       whaleData: [],
-      speciesData: []
+      speciesData: [],
+      isOpen: false
     };
   }
 
