@@ -16,7 +16,7 @@ class Accordion extends Component {
             return <li key={link}><a>{link}</a></li>
         })
         return (
-         <ul style={ulStyle} className="accordion-content">{allLinks}</ul>
+         <ul style={ulStyle} className={`accordion-content ${this.props.toggle? 'isOpen':''}`}>{allLinks}</ul>
         );
     }
 

@@ -4,7 +4,7 @@ import Accordion from './Accordion';
 
 class Navigation extends Component {
     render() {
-        const { btnNames, onClick } = this.props;
+        const { btnNames, onClick, isOpen } = this.props;
         const NavStyle = {
            
         };
@@ -21,7 +21,7 @@ class Navigation extends Component {
             "cursor":"pointer"
         }
         const navBarBtn = btnNames.map((name,i) =>
-            <div key={name}><button style={btnStyle} ><a onClick={() => onClick(name)}>{name}</a></button><Accordion num={i} links={this.props.animalLinks}/></div>
+            <div key={name}><button style={btnStyle} ><a onClick={() => onClick()}>{name}</a></button><Accordion toggle={isOpen} num={i} links={this.props.animalLinks}/></div>
         );
         return (
             <nav style={NavStyle}>

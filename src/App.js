@@ -38,6 +38,12 @@ class App extends Component {
       });
   }
 
+  handleToggle=()=>{
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+
   render() {
     // Google Maps API Key is needed for map
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -57,7 +63,7 @@ class App extends Component {
 
           <div className="map-navigation">
             <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
-            <Navigation btnNames={this.state.category} onClick={this.getSpeciesData} animalLinks={this.state.species} />
+            <Navigation btnNames={this.state.category} onClick={this.handleToggle} animalLinks={this.state.species} isOpen={this.state.isOpen} />
             <Footer />
           </div>
 
