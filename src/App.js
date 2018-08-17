@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: ["whales", "dolphin", "porpoise", "sea lion", "seal", "other"],
+      category: ["whales", "dolphins", "porpoises", "sea lions", "seals", "other"],
       species:
         [["orca", "minke", "gray whale", "humpback"],["atlantic white-sided dolphin", "pacific white-sided dolphin"],
         ["dalls porpoise", "harbor porpoise"],
