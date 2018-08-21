@@ -3,6 +3,13 @@ import './Navigation.css';
 import Accordion from './Accordion';
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false
+        }
+    }
+
     render() {
         const { btnNames, onClick, isOpen } = this.props;
 
@@ -12,14 +19,14 @@ class Navigation extends Component {
             "textTransform": "capitalize",
             "fontSize": "1.1em",
             "backgroundColor": "#333",
-            "color": "#fff", 
+            "color": "#fff",
             "border": "none",
             "outline": "none",
-            "textAlign":"left",
-            "cursor":"pointer"
+            "textAlign": "left",
+            "cursor": "pointer"
         }
-        const navBarBtn = btnNames.map((name,i) =>
-            <div key={name}><button style={btnStyle} ><a onClick={() => onClick()}>{name}</a></button><Accordion toggle={isOpen} num={i} links={this.props.animalLinks}/></div>
+        const navBarBtn = btnNames.map((name, i) =>
+            <div key={name}><button style={btnStyle} ><a onClick={() => onClick()}>{name}</a></button><Accordion toggle={isOpen} num={i} links={this.props.animalLinks} /></div>
         );
         return (
             <nav>
