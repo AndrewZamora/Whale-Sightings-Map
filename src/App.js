@@ -37,11 +37,6 @@ class App extends Component {
       });
   }
 
-  handleToggle=()=>{
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
-  }
 
   render() {
     // Google Maps API Key is needed for map

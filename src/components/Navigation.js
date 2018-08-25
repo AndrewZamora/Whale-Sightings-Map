@@ -10,8 +10,16 @@ class Navigation extends Component {
         }
     }
 
+    handleToggle=()=>{
+        this.setState({
+          isOpen: !this.state.isOpen
+        })
+      }
+    
+
     render() {
-        const { btnNames, onClick, isOpen } = this.props;
+        
+        const { btnNames, onClick} = this.props;
 
         const btnStyle = {
             "display": "block",
@@ -26,7 +34,7 @@ class Navigation extends Component {
             "cursor": "pointer"
         }
         const navBarBtn = btnNames.map((name, i) =>
-            <div key={name}><button style={btnStyle} ><a onClick={() => onClick()}>{name}</a></button><Accordion toggle={isOpen} num={i} links={this.props.animalLinks} /></div>
+            <div key={name}><button style={btnStyle} ><a onClick={() => this.handleToggle}>{name}</a></button><Accordion toggle={this.state.isOpen} num={i} links={this.props.animalLinks} /></div>
         );
         return (
             <nav>
