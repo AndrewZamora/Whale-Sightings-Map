@@ -21,9 +21,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-  }
-
   getSpeciesData = animal => {
     fetch('api.json?species=' + animal)
       .then(response => response.json())
@@ -37,7 +34,6 @@ class App extends Component {
       });
   }
 
-
   render() {
     // Google Maps API Key is needed for map
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -47,7 +43,9 @@ class App extends Component {
       lng: -122.916611
     };
 
-    const AllSightings = this.state.speciesData.map((sight) => {
+    const {speciesData,category,species}= this.state;
+
+    const AllSightings = speciesData.map((sight) => {
       return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
     })
 
@@ -57,7 +55,7 @@ class App extends Component {
 
           <div className="map-navigation">
             <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
-            <Navigation btnNames={this.state.category} onClick={this.handleToggle} animalLinks={this.state.species} isOpen={this.state.isOpen} />
+            <Navigation titles={category} items={species} />
             <Footer />
           </div>
 

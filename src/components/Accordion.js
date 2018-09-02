@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
-import './Accordion.css';
-
-
-
+import AccordionItem from './AccordionItem';
 
 class Accordion extends Component {
-    
-    render() {
-        const ulStyle = {
-            "listStyle": "none",
-            "margin": "0.2em 0 0.2em 0.3em",
-            "padding": "0",
-            "textTransform":"capitalize"
-        };
-        const allLinks = this.props.links[this.props.num].map(link => {
-            return <li key={link}><a>{link}</a></li>
-        })
-        return (
-         <ul style={ulStyle} className={`accordion-content ${this.props.toggle? 'isOpen':''}`}>{allLinks}</ul>
-        );
-    }
-
+  render() {
+    const { items, titles } = this.props;
+    const allItems = items.map((item, i) =>
+      <AccordionItem title={titles[i]} key={item}>
+          {item}
+        </AccordionItem>);
+    return (
+      <div>
+        {allItems}
+      </div>
+    );
+  }
 }
 
-export default Accordion; 
-
+export default Accordion;
