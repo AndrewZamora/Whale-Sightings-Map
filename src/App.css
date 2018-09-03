@@ -5,7 +5,7 @@
     height: 100vh;
 }
 .map-navigation nav{
-    margin: auto 0;
+    margin: 0;
 }
 
 main {
@@ -18,4 +18,8 @@ main {
     top:0;
     position: sticky;
     flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
 }
