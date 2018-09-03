@@ -1,25 +1,27 @@
-.map-navigation{
-    display: flex;
-    flex-basis: 25%;
-    flex-direction: column;
-    height: 100vh;
-}
-.map-navigation nav{
-    margin: 0;
-}
-
 main {
     display: flex;
-}
-
-.map{
-    background: #ccc;
-    height: 100vh;
-    top:0;
-    position: sticky;
-    flex-grow: 1;
 }
 
 footer {
     margin-top: auto;
 }
+
+.map-navigation {
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.map-navigation nav {
+    margin: 0;
+}
+
+.map {
+    background: #ccc;
+    height: 100vh;
+    top: 0;
+    position: sticky;
+    flex-grow: 1;
+}
+
