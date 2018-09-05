@@ -1,4 +1,6 @@
-This is a map of recent whale sightings.
+This is a map of recent whale sightings in the Seattle Area.
+
+![App Demo](./demo.gif)
 
 ## Getting Started
 1. Create a Google Maps API key
