@@ -3,9 +3,9 @@ import AccordionItem from './AccordionItem';
 
 class Accordion extends Component {
   render() {
-    const { items, titles } = this.props;
+    const { items, titles, onClick } = this.props;
     const allItems = items.map((item, i) =>
-      <AccordionItem title={titles[i]} key={item}>
+      <AccordionItem onClick={onClick} title={titles[i]} key={item}>
           {item}
         </AccordionItem>);
     return (

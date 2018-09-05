@@ -4,10 +4,13 @@ import Accordion from './Accordion';
 
 class Navigation extends Component {
     render() {
-        const { titles,items } = this.props;
+        const { titles,items,onClick } = this.props;
         return (
             <nav>
-                <Accordion titles={titles} items={items}/>
+                <Accordion 
+                titles={titles}
+                onClick={onClick} 
+                items={items}/>
             </nav>
         );
     }

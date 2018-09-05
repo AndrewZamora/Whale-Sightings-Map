@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       category: ["whales", "dolphins", "porpoises", "sea lions", "seals", "other"],
       species:
-        [["orca", "minke", "gray whale", "humpback"],["atlantic white-sided dolphin", "pacific white-sided dolphin"],
+        [["orca", "minke", "gray whale", "humpback"], ["atlantic white-sided dolphin", "pacific white-sided dolphin"],
         ["dalls porpoise", "harbor porpoise"],
         ["harbor seal", "northern elephant seal", "southern elephant seal"],
         ["california sea lion", "steller sea lion"], ["sea otter", "other", "unknown"]],
@@ -43,7 +43,7 @@ class App extends Component {
       lng: -122.916611
     };
 
-    const {speciesData,category,species}= this.state;
+    const { speciesData, category, species } = this.state;
 
     const AllSightings = speciesData.map((sight) => {
       return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
@@ -55,7 +55,10 @@ class App extends Component {
 
           <div className="map-navigation">
             <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
-            <Navigation titles={category} items={species} />
+            <Navigation 
+            titles={category} 
+            items={species}
+            onClick={this.getSpeciesData} />
             <Footer />
           </div>
 
@@ -65,7 +68,8 @@ class App extends Component {
               bootstrapURLKeys=
               {{ key: apiKey }}
               center={center}
-              zoom={7} style={{ "zIndex": "-1" }}>
+              zoom={7}
+              style={{ "zIndex": "-1" }}>
               {AllSightings}
             </GoogleMapReact>
           </div>

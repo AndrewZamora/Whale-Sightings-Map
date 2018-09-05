@@ -19,10 +19,11 @@ class AccordionItem extends Component {
   }
 
   render() {
-    const { title, children } = this.props;
+    const { title, children,onClick } = this.props;
     const { active, height } = this.state;
     const currentHeight = active ? height : 0;
-    const childrenList = children.map(child => <a key={child}>{child}</a>);
+    const childrenList = children.map(child => <a onClick={() => onClick(child)} 
+    key={child}>{child}</a>);
     return (
       <ul className="accordion">
         <li>
