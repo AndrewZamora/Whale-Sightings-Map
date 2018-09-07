@@ -63,7 +63,6 @@ class App extends Component {
           </div>
 
           <div className="map">
-            <h1 style={{ "zIndex": "1", "textAlign": "center", "marginTop": "40vh" }}>Loading...</h1>
             <GoogleMapReact
               bootstrapURLKeys=
               {{ key: apiKey }}

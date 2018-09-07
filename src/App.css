@@ -25,3 +25,18 @@ footer {
     flex-grow: 1;
 }
 
+@media screen and (max-width:500px){
+    main {
+        flex-direction: column-reverse;
+    }
+    .map {
+        height: 40vh;
+    }
+    .map-navigation {
+        height: 60vh;
+    }
+    .map-navigation footer p {
+       font-size: 0.5em;
+       padding: 0.5em;
+    }
+}
