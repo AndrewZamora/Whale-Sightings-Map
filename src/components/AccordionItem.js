@@ -19,17 +19,17 @@ class AccordionItem extends Component {
   }
 
   render() {
-    const { title, children,onClick } = this.props;
+    const { title, children, onClick } = this.props;
     const { active, height } = this.state;
     const currentHeight = active ? height : 0;
-    const childrenList = children.map(child => 
-    <a onClick={() => onClick(child)} 
-    key={child}>
-    {child}</a>);
+    const childrenList = children.map(child =>
+      <a onClick={() => onClick(child)}
+        key={child}>
+        {child}</a>);
     return (
       <ul className="accordion">
         <li>
-          <a onClick={(event) => {this.handleClick(event)}} className="tab">{title}</a>
+            <a onClick={(event) => { this.handleClick(event) }} className="tab">{title}<div><i class="arrow"></i></div></a>
           <div className="panel" style={{ height: currentHeight }}>
             <div className="content" ref='inner'>
               {childrenList}
