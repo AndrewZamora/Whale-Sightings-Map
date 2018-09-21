@@ -45,7 +45,7 @@ class App extends Component {
 
     const { speciesData, category, species } = this.state;
 
-    const AllSightings = speciesData.map((sight) => {
+    const AllSightings = speciesData.map(sight => {
       return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
     })
 

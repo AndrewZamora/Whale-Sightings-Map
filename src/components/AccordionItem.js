@@ -29,7 +29,7 @@ class AccordionItem extends Component {
     return (
       <ul className="accordion">
         <li>
-            <a onClick={(event) => { this.handleClick(event) }} className="tab">{title}<div><i class="arrow"></i></div></a>
+            <a onClick={(event) => { this.handleClick(event) }} className="tab">{title}<div><i className="arrow"></i></div></a>
           <div className="panel" style={{ height: currentHeight }}>
             <div className="content" ref='inner'>
               {childrenList}
