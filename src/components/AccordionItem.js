@@ -10,11 +10,11 @@ class AccordionItem extends Component {
     }
   }
 
-  handleClick = (event) => {
-    event.preventDefault()
+  handleClick = (event,i) => {
+    event.preventDefault();
     this.setState({
       active: !this.state.active,
-      height: this.refs.inner.clientHeight
+      height: this.refs.inner.clientHeight,
     })
   }
 
@@ -22,14 +22,14 @@ class AccordionItem extends Component {
     const { title, children, onClick } = this.props;
     const { active, height } = this.state;
     const currentHeight = active ? height : 0;
-    const childrenList = children.map(child =>
+    const childrenList = children.map((child) =>
       <a onClick={() => onClick(child)}
         key={child}>
         {child}</a>);
     return (
       <ul className="accordion">
         <li>
-            <a onClick={(event) => { this.handleClick(event) }} className="tab">{title}<div><i className="arrow"></i></div></a>
+            <button onClick={(event) => { this.handleClick(event) }} className="tab">{title}<div><i className="arrow"></i></div></button>
           <div className="panel" style={{ height: currentHeight }}>
             <div className="content" ref='inner'>
               {childrenList}
