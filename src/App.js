@@ -5,6 +5,7 @@ import './components/Navigation';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Marker from './components/Marker';
+const whaleApiUrl = process.env.REACT_APP_WHALE_API_REQUEST;
 
 class App extends Component {
   constructor(props) {
@@ -20,9 +21,8 @@ class App extends Component {
       speciesData: []
     };
   }
-
   getSpeciesData = animal => {
-    fetch(process.env.REACT_APP_WHALE_API_REQUEST + animal)
+    fetch(`${whaleApiUrl}api.json?species=${animal}`)
       .then(response => {
         response.json()
       })
