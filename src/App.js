@@ -22,9 +22,10 @@ class App extends Component {
   }
 
   getSpeciesData = animal => {
-    fetch(`https://hotline.whalemuseum.org/api.json?species=${animal}`, {mode: 'no-cors'})
-      .then(response => 
-        console.log(response), response.json())
+    fetch(process.env.REACT_APP_WHALE_API_REQUEST + animal)
+      .then(response => {
+        response.json()
+      })
       .then((data) => {
         this.setState({
           speciesData: data
@@ -56,10 +57,10 @@ class App extends Component {
 
           <div className="map-navigation">
             <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
-            <Navigation 
-            titles={category} 
-            items={species}
-            onClick={this.getSpeciesData} />
+            <Navigation
+              titles={category}
+              items={species}
+              onClick={this.getSpeciesData} />
             <Footer />
           </div>
 
