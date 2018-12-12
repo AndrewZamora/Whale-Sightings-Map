@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   getSpeciesData = animal => {
-    fetch('http://hotline.whalemuseum.org/api.json?species=' + animal)
+    fetch('https://hotline.whalemuseum.org/api.json?species=' + animal)
       .then(response => response.json())
       .then((data) => {
         this.setState({
