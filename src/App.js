@@ -26,6 +26,7 @@ class App extends Component {
         response.json()
       })
       .then((data) => {
+        console.log(data)
         this.setState({
           speciesData: data
         })
