@@ -5,6 +5,7 @@ import './components/Navigation';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Marker from './components/Marker';
+import Modal from './components/Modal';
 
 class App extends Component {
   constructor(props) {
@@ -17,18 +18,30 @@ class App extends Component {
         ["harbor seal", "northern elephant seal", "southern elephant seal"],
         ["california sea lion", "steller sea lion"], ["sea otter", "other", "unknown"]],
       whaleData: [],
-      speciesData: []
+      speciesData: [],
+      error: null
     };
   }
   getSpeciesData = animal => {
     fetch("https://hotline.whalemuseum.org/api.json?species=" + animal)
       .then(response => response.json())
       .then(data => {
-        this.setState({ speciesData: data })
+        if (data.length === 0) {
+          this.setState({ error: `Sorry no recent ${animal} sightings.` })
+        }
+        else {
+          this.setState({ speciesData: data })
+        }
       })
       .catch((error) => {
         console.error(error);
       });
+  }
+
+  closeModal=()=>{
+    this.setState(({
+      error: null
+    }))
   }
 
   render() {
@@ -46,19 +59,20 @@ class App extends Component {
       return <Marker lat={sight.latitude} lng={sight.longitude} text={sight.species} key={sight.id} />
     })
 
+    const modal = this.state.error && <Modal text={this.state.error} onClick={()=>this.closeModal} />;
+
     return (
       <div className="app">
+        {modal}
         <main>
-
           <div className="map-navigation">
-            <h1 style={{ "margin": "0.1em 0 0.1em 0.3em" }}>Whale Sightings Map</h1>
+            <h1 style={{ "margin": "0.1em 0 1em 0.3em" }}>Whale Sightings Map</h1>
             <Navigation
               titles={category}
               items={species}
               onClick={this.getSpeciesData} />
             <Footer />
           </div>
-
           <div className="map">
             <GoogleMapReact
               bootstrapURLKeys=
