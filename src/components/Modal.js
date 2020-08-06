@@ -6,7 +6,7 @@ class Modal extends Component {
         return (
             <div style={styles.container}>
                 <main style={styles.main}>
-                    <a className="modal-close" onClick={this.props.onClick()}>&times;</a>
+                    <button className="modal-close" onClick={this.props.onClick()}>&times;</button>
                     <div style={styles.text}>
                         <h2 style={styles.h2}><span role="img" aria-label='sorry'>😲</span> Oh Snap!</h2>
                         <p style={styles.p}>{this.props.text}</p>

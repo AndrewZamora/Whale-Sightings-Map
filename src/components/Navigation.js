@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import './Navigation.css';
-import styles from './Navigation.module.css';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -31,7 +30,7 @@ const Navigation = ({ titles, items, onClick }) => {
             return (
               <Fragment>
                 <ListItem button onClick={() => handleClick(index)} >
-                  <ListItemText primary={title} className={styles['list-tab']}/>
+                  <ListItemText primary={title}/>
                   {open === index ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                 <Collapse in={open === index} timeout="auto" unmountOnExit>

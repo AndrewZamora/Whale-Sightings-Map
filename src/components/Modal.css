@@ -4,6 +4,7 @@
     cursor: pointer;
     color:#333;
     padding: 0 0.3em;
+    border: none;
 }
 .modal-close:hover {
     color:#fff;
